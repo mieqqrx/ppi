@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Технології | VidFlow</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .page-wrapper {
+            flex: 1 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding-top: 120px !important;
+            padding-bottom: 40px !important;
+            min-height: 0 !important;
+        }
+
+        .page-title, .page-subtitle {
+            width: 100%;
+            text-align: center;
+        }
+
+        .tech-container {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 40px;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .tech-layer {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        footer {
+            flex-shrink: 0;
+            margin-top: auto !important;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .tech-container {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden; z-index: -1; pointer-events: none;">
+    <div class="glow-blob top"></div>
+    <div class="glow-blob bottom"></div>
+</div>
+
+<nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+        <img src="logo.png" alt="VidFlow Logo" class="logo" style="width: 40px; height: 40px;">
+        VidFlow
+    </a>
+
+    <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="technologies.html" style="color: var(--text-main);">Технології</a></li>
+        <li><a href="features.html">Можливості</a></li>
+        <li><a href="developers.html">Розробники</a></li>
+    </ul>
+</nav>
+
+<div class="page-wrapper">
+    <h1 class="page-title">Архітектура Платформи</h1>
+    <p class="page-subtitle">Високопродуктивний стек технологій, створений для масштабування та швидкості.</p>
+
+    <div class="tech-container">
+        <div class="tech-layer">
+            <h3 style="color: #61DAFB;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                Frontend
+            </h3>
+
+            <ul class="tech-list">
+                <li><strong>Next.js (App Router):</strong> Серверний рендеринг (SSR) для миттєвого завантаження сторінок та SEO-оптимізації.</li>
+                <li><strong>TypeScript:</strong> Строга типізація для надійності даних відео та коментарів.</li>
+                <li><strong>Redux Toolkit (RTK Query):</strong> Ефективне кешування запитів до API, управління стейтом плеєра.</li>
+                <li><strong>Tailwind CSS & Framer Motion:</strong> Гнучка стилізація та плавні 60fps анімації взаємодій.</li>
+            </ul>
+        </div>
+
+        <div class="tech-layer">
+            <h3 style="color: #512BD4;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                Backend
+            </h3>
+
+            <ul class="tech-list">
+                <li><strong>C# / .NET Core 8:</strong> Високопродуктивне ядро платформи, створення надійного REST API.</li>
+                <li><strong>Entity Framework Core:</strong> Надійна ORM для взаємодії з базою даних.</li>
+                <li><strong>FFmpeg:</strong> Конвертація завантажених файлів у HLS-формат (m3u8), розбиття на сегменти, генерація прев'юшок та витягування метаданих (тривалість відео).</li>
+                <li><strong>JWT Authentication:</strong> Захищений доступ до ресурсів та системи коментування.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 VideoHub. Всі права захищені.</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const nav = document.querySelector('.nav-links');
+        nav.classList.toggle('active');
+    }
+
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            nav.style.background = 'rgba(5, 5, 5, 0.9)';
+            nav.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+        } else {
+            nav.style.background = 'rgba(5, 5, 5, 0.6)';
+            nav.style.boxShadow = 'none';
+        }
+    });
+</script>
+</body>
+</html>

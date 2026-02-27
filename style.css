@@ -1,0 +1,571 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+:root {
+    --bg-dark: #050505;
+    --surface: rgba(255, 255, 255, 0.03);
+    --surface-border: rgba(255, 255, 255, 0.08);
+    --primary: #3ea6ff;
+    --secondary: #8b5cf6;
+    --text-main: #ffffff;
+    --text-muted: #a1a1aa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden; /* Глобально блокуємо горизонтальний скролл */
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+}
+
+/* Ambient Background Glow */
+.glow-blob {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.15;
+    z-index: -1;
+    animation: float 10s infinite alternate ease-in-out;
+}
+.glow-blob.top { top: -200px; left: -100px; }
+.glow-blob.bottom { bottom: -200px; right: -100px; animation-delay: -5s; }
+
+@keyframes float {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(50px) scale(1.1); }
+}
+
+/* Glassmorphism Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(5, 5, 5, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--surface-border);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 650;
+    color: var(--text-main);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--text-main);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.badge {
+    background: rgba(62, 166, 255, 0.1);
+    color: var(--primary);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(62, 166, 255, 0.2);
+    margin-bottom: 24px;
+    animation: fadeUp 1s ease-out;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    max-width: 900px;
+    animation: fadeUp 1.2s ease-out;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 40px;
+    animation: fadeUp 1.4s ease-out;
+}
+
+.btn-glow {
+    display: inline-block;
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    border-radius: 30px;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeUp 1.6s ease-out;
+}
+
+.btn-glow::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 30px;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.btn-glow:hover {
+    transform: translateY(-2px);
+}
+
+.btn-glow:hover::before {
+    opacity: 0.8;
+}
+
+/* Features Section (Bento Grid) */
+.features-section {
+    padding: 100px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.bento-card {
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 24px;
+    padding: 40px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.bento-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 0%, rgba(62, 166, 255, 0.1), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.bento-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(62, 166, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.bento-card:hover::after {
+    opacity: 1;
+}
+
+.bento-card.large {
+    grid-column: span 2;
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(62, 166, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    color: var(--primary);
+}
+
+.bento-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.bento-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid var(--surface-border);
+    padding: 40px 5%;
+    text-align: center;
+    color: var(--text-muted);
+    margin-top: 50px;
+}
+
+/* ================= НОВІ СТИЛІ ДЛЯ ОКРЕМИХ СТОРІНОК ================= */
+
+/* Загальний відступ для сторінок без Hero */
+.page-wrapper {
+    padding: 120px 5% 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 80vh;
+}
+
+.page-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, var(--primary), var(--text-main));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeUp 0.8s ease-out;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+    animation: fadeUp 1s ease-out;
+}
+
+/* Технології: Грід-картки стеків */
+.tech-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.tech-layer {
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 24px;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-layer:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(62, 166, 255, 0.15);
+    border-color: rgba(62, 166, 255, 0.3);
+}
+
+.tech-layer::before {
+    content: '';
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 100px; height: 100px;
+    background: var(--primary);
+    filter: blur(60px);
+    opacity: 0.2;
+}
+
+.tech-layer h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.tech-list {
+    list-style: none;
+}
+
+.tech-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--surface-border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tech-list li:last-child { border-bottom: none; }
+
+.tech-stack {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.tech-badge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    transition: all 0.3s;
+}
+
+.tech-badge:hover {
+    background: rgba(62, 166, 255, 0.15);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* ================= СТИЛІ ДЛЯ СІТКИ КОМАНДИ (developers.html) ================= */
+
+/* Загальний опис команди */
+.dev-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 30px;
+    padding: 60px 40px;
+    backdrop-filter: blur(15px);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    max-width: 1110px; /* Ідеальна ширина для 3 карток по 350px та двох відступів по 30px */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dev-card {
+    width: 100%;
+    max-width: 350px;
+    min-height: 450px; /* Усі картки будуть однакової висоти незалежно від вмісту */
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 24px;
+    padding: 40px 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dev-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(62, 166, 255, 0.4);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dev-card img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 4px solid var(--bg-dark);
+    /* Фіолетовий колір за замовчуванням (для Артема) */
+    box-shadow: 0 0 0 2px var(--secondary);
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.dev-card h2 {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+
+.dev-card h3 {
+    /* Фіолетовий колір за замовчуванням (для Артема) */
+    color: var(--secondary);
+    font-size: 1rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.dev-card .tech-stack {
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: 20px;
+    gap: 8px;
+    width: 100%;
+}
+
+.dev-card .tech-badge {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+}
+
+.dev-card-socials {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
+.dev-card-socials a {
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: transparent;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    border: 1px solid var(--primary);
+    transition: all 0.3s;
+}
+
+.dev-card-socials a:hover {
+    background: var(--primary);
+    color: #000;
+    border-color: var(--primary);
+}
+
+.dev-card.backend img { box-shadow: 0 0 0 2px #3ea6ff; }
+.dev-card.backend h3 { color: #3ea6ff; }
+
+.dev-card.scrum img { box-shadow: 0 0 0 2px #ec4899; }
+.dev-card.scrum h3 { color: #ec4899; }
+
+.dev-card.qa-front img { box-shadow: 0 0 0 2px #f59e0b; }
+.dev-card.qa-front h3 { color: #f59e0b; }
+
+.dev-card.qa img { box-shadow: 0 0 0 2px #10b981; }
+.dev-card.qa h3 { color: #10b981; }
+
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 992px) {
+    .hero h1 { font-size: 3.5rem; }
+    .bento-grid { grid-template-columns: repeat(2, 1fr); }
+    .bento-card.large { grid-column: span 1; }
+
+    /* Центруємо фонові світіння для планшетів та смартфонів */
+    .glow-blob.top, .glow-blob.bottom {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 300px;
+        height: 300px;
+        filter: blur(100px);
+    }
+    .glow-blob.top { top: -50px; }
+    .glow-blob.bottom { bottom: -50px; }
+}
+
+/* ================= АДАПТИВНІСТЬ ДЛЯ СМАРТФОНІВ ================= */
+@media (max-width: 768px) {
+    .mobile-menu-btn { display: block; }
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(5, 5, 5, 0.95);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 20px;
+        border-bottom: 1px solid var(--surface-border);
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+        z-index: -1;
+    }
+    .nav-links.active { transform: translateY(0); }
+    .hero h1 { font-size: 2.5rem; }
+    .bento-grid { grid-template-columns: 1fr; }
+    .bento-card.large { grid-column: span 1; }
+    .tech-stack { justify-content: center; }
+
+    /* Виправлення блоку профілю (Розробники) для мобільних */
+    .dev-profile {
+        padding: 30px 15px !important; /* Перевизначаємо inline-padding з HTML */
+        margin: 0 10px 40px 10px !important; /* Робимо безпечні відступи з боків */
+        width: auto;
+    }
+
+    /* Зменшуємо розмір заголовка "Наша Команда" */
+    .dev-profile h1 {
+        font-size: 2.2rem !important; /* Перевизначаємо inline font-size: 3rem */
+    }
+
+    /* Робимо текст більш читабельним і центрованим */
+    .dev-profile p {
+        font-size: 1rem !important;
+        text-align: center;
+        word-break: break-word; /* Запобігаємо вилазенню довгих слів */
+        padding: 0 5px;
+    }
+
+    /* Додаткові відступи для карток на телефоні */
+    .team-grid {
+        padding: 0 15px;
+    }
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Можливості | VidFlow</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+
+<body>
+<div class="glow-blob top"></div>
+
+<nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+        <img src="logo.png" alt="VidFlow Logo" class="logo" style="width: 40px; height: 40px;">
+        VidFlow
+    </a>
+
+    <!-- ДОДАНО: Кнопка мобільного меню -->
+    <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="technologies.html">Технології</a></li>
+        <li><a href="features.html" style="color: var(--text-main);">Можливості</a></li>
+        <li><a href="developers.html">Розробники</a></li>
+    </ul>
+</nav>
+
+<div class="page-wrapper">
+    <h1 class="page-title">Функціонал Платформи</h1>
+    <p class="page-subtitle">Від плавного відтворення до соціальних взаємодій.</p>
+
+    <div class="bento-grid">
+        <div class="bento-card large">
+            <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
+            <h3>Адаптивний відеоплеєр (HLS)</h3>
+            <p>Відео автоматично підлаштовується під швидкість інтернету користувача. Реалізована підтримка зміни роздільної здатності "на льоту", керування з клавіатури, режим Picture-in-Picture та динамічне відображення тривалості (інтеграція з FFmpeg).</p>
+        </div>
+
+        <div class="bento-card">
+            <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg></div>
+            <h3>Система реакцій</h3>
+            <p>Механізм лайків та дизлайків з Optimistic Updates. Анімовані іконки миттєво реагують на дії користувача, а бекенд-сервіс гарантує захист від накруток та правильну логіку взаємовиключення (не можна поставити лайк і дизлайк одночасно).</p>
+        </div>
+
+        <div class="bento-card">
+            <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
+            <h3>Гілка коментарів</h3>
+            <p>Можливість залишати думки під відео, переглядати профілі авторів коментарів та бачити дату публікації. Автоматичне оновлення стрічки після залишення відгуку.</p>
+        </div>
+
+        <div class="bento-card large">
+            <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
+            <h3>Система каналів та підписок</h3>
+            <p>Кожен користувач може створити свій канал, завантажити аватар та публікувати контент. Реалізована повноцінна система підписок, що дозволяє формувати власну стрічку актуальних відео та керувати сповіщеннями.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 VideoHub. Всі права захищені.</p>
+</footer>
+
+<!-- ДОДАНО: Скрипти для роботи меню та ефекту скролу -->
+<script>
+    // Простий скрипт для відкриття мобільного меню
+    function toggleMenu() {
+        const nav = document.querySelector('.nav-links');
+        nav.classList.toggle('active');
+    }
+
+    // Додаємо тінь для Navbar при скролі
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            nav.style.background = 'rgba(5, 5, 5, 0.9)';
+            nav.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+        } else {
+            nav.style.background = 'rgba(5, 5, 5, 0.6)';
+            nav.style.boxShadow = 'none';
+        }
+    });
+</script>
+</body>
+</html>

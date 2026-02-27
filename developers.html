@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Команда | VidFlow</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+
+<body>
+<div class="glow-blob top" style="background: linear-gradient(to right, var(--secondary), #ec4899);"></div>
+<div class="glow-blob bottom" style="background: linear-gradient(to right, #3ea6ff, #10b981);"></div>
+
+<nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+        <img src="logo.png" alt="VidFlow Logo" class="logo" style="width: 40px; height: 40px;">
+        VidFlow
+    </a>
+
+    <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="technologies.html">Технології</a></li>
+        <li><a href="features.html">Можливості</a></li>
+        <li><a href="developers.html" style="color: var(--text-main);">Розробники</a></li>
+    </ul>
+</nav>
+
+<div class="page-wrapper">
+    <div class="dev-profile" style="max-width: 1000px; padding: 40px; margin-bottom: 50px;">
+        <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 20px;">Наша Команда</h1>
+        <p style="color: var(--text-muted); font-size: 1.15rem; line-height: 1.8; max-width: 800px; margin: 0 auto;">
+            Створення клону YouTube — це не просто лабораторна робота, а справжній командний виклик.
+            Нашою спільною метою було спроектувати платформу, яка поєднує в собі складну логіку обробки медіафайлів на бекенді з бездоганним та реактивним користувацьким інтерфейсом.
+            Завдяки злагодженій роботі п'ятьох спеціалістів, ми змогли реалізувати весь запланований функціонал, розділивши зони відповідальності від архітектури баз даних до автоматизованого тестування.
+        </p>
+    </div>
+
+    <div class="team-grid">
+
+        <div class="dev-card scrum">
+            <img src="https://ui-avatars.com/api/?name=Anastasia&background=ec4899&color=fff&size=200" alt="Анастасія">
+            <h2>Анастасія</h2>
+            <h3>Scrum-майстер / Frontend</h3>
+            <div class="tech-stack">
+                <span class="tech-badge">Next.js</span>
+                <span class="tech-badge">TypeScript</span>
+                <span class="tech-badge">Redux Toolkit</span>
+                <span class="tech-badge">Tailwind</span>
+            </div>
+            <div class="dev-card-socials">
+                <a href="https://github.com/mieqqrx" target="_blank">GitHub</a>
+                <a href="mailto:anastasiayatemnaya@gmail.com">Email</a>
+            </div>
+        </div>
+
+        <div class="dev-card">
+            <img src="https://ui-avatars.com/api/?name=Artem&background=8b5cf6&color=fff&size=200" alt="Артем">
+            <h2>Артем</h2>
+            <h3>Frontend-розробник</h3>
+            <div class="tech-stack">
+                <span class="tech-badge">Next.js</span>
+                <span class="tech-badge">TypeScript</span>
+                <span class="tech-badge">Redux Toolkit</span>
+
+                <span class="tech-badge">FFmpeg</span>
+            </div>
+            <div class="dev-card-socials">
+                <a href="https://github.com/mutednew" target="_blank">GitHub</a>
+                <a href="mailto:artehaguk@gmail.com">Email</a>
+            </div>
+        </div>
+
+        <div class="dev-card backend">
+            <img src="https://ui-avatars.com/api/?name=Andriy&background=3ea6ff&color=fff&size=200" alt="Андрій">
+            <h2>Андрій</h2>
+            <h3>Backend-розробник</h3>
+            <div class="tech-stack">
+                <span class="tech-badge">.NET Core</span>
+                <span class="tech-badge">C#</span>
+                <span class="tech-badge">Entity Framework</span>
+                <span class="tech-badge">PostgreSQL</span>
+            </div>
+            <div class="dev-card-socials">
+                <a href="https://github.com/Rewer2022" target="_blank">GitHub</a>
+                <a href="mailto:andreymorar2022@gmail.com">Email</a>
+            </div>
+        </div>
+
+        <div class="dev-card qa-front">
+            <img src="https://ui-avatars.com/api/?name=Valeriya&background=f59e0b&color=fff&size=200" alt="Валерія">
+            <h2>Валерія</h2>
+            <h3>Frontend / QA Інженер</h3>
+            <div class="tech-stack">
+                <span class="tech-badge">Next.js</span>
+                <span class="tech-badge">TypeScript</span>
+                <span class="tech-badge">Selenium</span>
+                <span class="tech-badge">Cypress</span>
+            </div>
+            <div class="dev-card-socials">
+                <a href="https://github.com/Valeria976" target="_blank">GitHub</a>
+                <a href="mailto:lerazozulya170306@gmail.com">Email</a>
+            </div>
+        </div>
+
+        <div class="dev-card qa">
+            <img src="https://ui-avatars.com/api/?name=Dmytro&background=10b981&color=fff&size=200" alt="Дмитро">
+            <h2>Дмитро</h2>
+            <h3>QA Інженер</h3>
+            <div class="tech-stack">
+                <span class="tech-badge">Selenium</span>
+                <span class="tech-badge">Postman</span>
+                <span class="tech-badge">xUnit</span>
+                <span class="tech-badge">Playwright</span>
+            </div>
+            <div class="dev-card-socials">
+                <a href="https://github.com/dmitriyopi" target="_blank">GitHub</a>
+                <a href="mailto:misevdmitro@gmail.com">Email</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 VideoHub. Всі права захищені.</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const nav = document.querySelector('.nav-links');
+        nav.classList.toggle('active');
+    }
+
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            nav.style.background = 'rgba(5, 5, 5, 0.9)';
+            nav.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+        } else {
+            nav.style.background = 'rgba(5, 5, 5, 0.6)';
+            nav.style.boxShadow = 'none';
+        }
+    });
+</script>
+</body>
+</html>

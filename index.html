@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VidFlow | Еволюція відеоконтенту</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        .team-row {
+            flex-wrap: nowrap !important;
+            overflow-x: auto;
+            justify-content: flex-start !important;
+            padding-bottom: 20px;
+        }
+        .team-row .dev-card {
+            flex: 0 0 320px !important;
+        }
+
+        .team-row::-webkit-scrollbar {
+            height: 8px;
+        }
+        .team-row::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        .team-row::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="glow-blob top"></div>
+<div class="glow-blob bottom"></div>
+
+<nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+        <img src="logo.png" alt="VidFlow Logo" class="logo" style="width: 40px; height: 40px;">
+        VidFlow
+    </a>
+
+    <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+
+    <ul class="nav-links">
+        <li><a href="index.html" style="color: var(--text-main);">Головна</a></li>
+        <li><a href="technologies.html">Технології</a></li>
+        <li><a href="features.html">Можливості</a></li>
+        <li><a href="developers.html">Розробники</a></li>
+    </ul>
+</nav>
+
+<section class="hero" id="about">
+    <div class="badge">🚀 Версія 1.0 (Beta)</div>
+    <h1 id="hero-title">Твій новий відеопростір</h1>
+    <p>Надшвидка платформа з архітектурою на базі .NET Core та Next.js. Дивіться, коментуйте та керуйте контентом без компромісів у продуктивності.</p>
+    <a href="#features" class="btn-glow" id="start-btn">Дослідити платформу</a>
+</section>
+
+<section class="features-section" id="features">
+    <h2 class="section-title">Чому ми кращі?</h2>
+    <div class="bento-grid">
+
+        <div class="bento-card large">
+            <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <h3>Блискавичний HLS Плеєр</h3>
+            <p>Ми використовуємо адаптивний бітрейт стрімінг (HLS) та потужність FFmpeg на бекенді для того, щоб відео завантажувалось миттєво навіть на повільному інтернеті. Насолоджуйтесь якістю 1080p без підзавантажень.</p>
+        </div>
+
+        <div class="bento-card">
+            <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <h3>Жива спільнота</h3>
+            <p>Система коментарів у реальному часі, оптимістичні оновлення лайків та дизлайків. Будьте на зв'язку з авторами.</p>
+        </div>
+
+        <div class="bento-card">
+            <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            </div>
+            <h3>Студія Автора</h3>
+            <p>Повноцінний дашборд для завантаження контенту, генерації прев'ю та глибокої аналітики переглядів ваших відео.</p>
+        </div>
+
+        <div class="bento-card large">
+            <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3>Абсолютна безпека</h3>
+            <p>Сучасна система JWT-авторизації, захист від накрутки переглядів та надійна архітектура бази даних на Entity Framework.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="features-section" id="team" style="padding-top: 50px;">
+    <h2 class="section-title">Команда проєкту</h2>
+    <div class="team-grid team-row">
+
+        <div class="dev-card scrum">
+            <img src="https://ui-avatars.com/api/?name=Anastasia&background=ec4899&color=fff&size=200" alt="Анастасія">
+            <h2>Анастасія</h2>
+            <h3>Scrum-майстер / Frontend</h3>
+            <p style="color: var(--text-muted); font-style: italic; font-size: 0.95rem; margin-top: 15px; margin-bottom: 25px; line-height: 1.6;">«Моїм завданням було не лише створення чистого UI на Next.js, а й організація процесів. Кожен спринт наближав нас до ідеального продукту.»</p>
+
+        </div>
+
+        <div class="dev-card">
+            <img src="https://ui-avatars.com/api/?name=Artem&background=8b5cf6&color=fff&size=200" alt="Артем">
+            <h2>Артем</h2>
+            <h3>Frontend-розробник</h3>
+            <p style="color: var(--text-muted); font-style: italic; font-size: 0.95rem; margin-top: 15px; margin-bottom: 25px; line-height: 1.6;">«Ми прагнули зробити інтерфейс таким же швидким, як і сам HLS-стрімінг. Інтеграція складного бекенду з фронтендом була справжнім викликом.»</p>
+
+        </div>
+
+        <div class="dev-card backend">
+            <img src="https://ui-avatars.com/api/?name=Andriy&background=3ea6ff&color=fff&size=200" alt="Андрій">
+            <h2>Андрій</h2>
+            <h3>Backend-розробник</h3>
+            <p style="color: var(--text-muted); font-style: italic; font-size: 0.95rem; margin-top: 15px; margin-bottom: 25px; line-height: 1.6;">«Надійність бази даних та швидкість обробки запитів — це фундамент VideoHub. .NET Core дозволив нам витиснути максимум продуктивності.»</p>
+
+        </div>
+
+        <div class="dev-card qa-front">
+            <img src="https://ui-avatars.com/api/?name=Valeriya&background=f59e0b&color=fff&size=200" alt="Валерія">
+            <h2>Валерія</h2>
+            <h3>Frontend / QA Інженер</h3>
+            <p style="color: var(--text-muted); font-style: italic; font-size: 0.95rem; margin-top: 15px; margin-bottom: 25px; line-height: 1.6;">«Користувацький досвід має бути бездоганним з першої секунди. Я подбала про те, щоб дизайн був інтуїтивним, а баги не пройшли на продакшн.»</p>
+
+        </div>
+
+        <div class="dev-card qa">
+            <img src="https://ui-avatars.com/api/?name=Dmytro&background=10b981&color=fff&size=200" alt="Дмитро">
+            <h2>Дмитро</h2>
+            <h3>QA Інженер</h3>
+            <p style="color: var(--text-muted); font-style: italic; font-size: 0.95rem; margin-top: 15px; margin-bottom: 25px; line-height: 1.6;">«Жоден реліз не потрапляє до користувачів без моєї перевірки. Ми вибудували суворі пайплайни тестування для абсолютної стабільності.»</p>
+
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 VideoHub. Всі права захищені.</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const nav = document.querySelector('.nav-links');
+        nav.classList.toggle('active');
+    }
+
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            nav.style.background = 'rgba(5, 5, 5, 0.9)';
+            nav.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+        } else {
+            nav.style.background = 'rgba(5, 5, 5, 0.6)';
+            nav.style.boxShadow = 'none';
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const teamRow = document.querySelector('.team-row');
+        if (!teamRow) return;
+
+        let isHovered = false;
+        let direction = 1;
+        let speed = 1;
+
+        teamRow.addEventListener('mouseenter', () => isHovered = true);
+        teamRow.addEventListener('mouseleave', () => isHovered = false);
+
+        teamRow.addEventListener('touchstart', () => isHovered = true);
+        teamRow.addEventListener('touchend', () => isHovered = false);
+
+        teamRow.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            teamRow.scrollBy({
+                left: e.deltaY * 2,
+                behavior: 'smooth'
+            });
+        }, { passive: false });
+
+        function autoScroll() {
+            if (!isHovered) {
+                teamRow.scrollLeft += speed * direction;
+
+                if (teamRow.scrollLeft >= teamRow.scrollWidth - teamRow.clientWidth - 1) {
+                    direction = -1;
+                }
+                else if (teamRow.scrollLeft <= 0) {
+                    direction = 1;
+                }
+            }
+            requestAnimationFrame(autoScroll);
+        }
+
+        requestAnimationFrame(autoScroll);
+    });
+</script>
+</body>
+</html>
